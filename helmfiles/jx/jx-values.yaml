@@ -21,7 +21,8 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
-    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/
+    chartKind: pages
+    chartRepository: https://github.com/iMckify/pipeline-config-charts.git
     clusterName: kind
     devEnvApprovers:
     - todo
