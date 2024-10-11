@@ -1,0 +1,22 @@
+# Source: react-spring/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'react-spring'
+  name: react-spring
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: ImplementationSpecific
+        backend:
+          service:
+            name: react-spring
+            port:
+              number: 80
+    host: "react-spring-jx-staging.192.168.49.2.nip.io"
