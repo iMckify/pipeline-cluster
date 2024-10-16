@@ -27,7 +27,7 @@ spec:
         release: docker-registry
       annotations:
         checksum/config: 492034f39a50c85107770255c8e115771feb08b03bd86989b039c405ed359257
-        checksum/secret: add73d39c1f9b61dd57674e62f4dc66e759feba21c4ab85d3c930e165ce45410
+        checksum/secret: 1d38417cf98e0c68fd78c77684b7e1ee55e5d1a0fdd89235f546af3f112b8c65
     spec:
       securityContext:
         fsGroup: 1000
@@ -50,7 +50,13 @@ spec:
           httpGet:
             path: /
             port: 5000
-        resources: {}
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
         env:
         - name: REGISTRY_HTTP_SECRET
           valueFrom:
