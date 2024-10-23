@@ -90,7 +90,7 @@
     ingresses:
     - name: docker-registry
       url: http://docker-registry-jx.192.168.49.2.nip.io/
-    lastDeployed: "2024-10-16T15:00:08Z"
+    lastDeployed: "2024-10-23T19:19:28Z"
     maintainers:
     - email: devin@canterberry.cc
       name: Devin Canterberry
