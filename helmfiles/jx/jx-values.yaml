@@ -16,6 +16,13 @@ jx:
       email: jenkins-x@googlegroups.com
       token: todo
       username: jenkins-x-labs-bot
+  volumes:                           # <-- Add volumes section
+    dockerRegistry:                  # Name of the volume for docker registry
+      mountPath: /var/lib/registry    # Inside the container (registry data location)
+      hostPath: /home/rokas/volumes/docker-registry  # Host machine path for persistent storage
+      size: 5Gi                     # Size of the volume (adjust as needed)
+      accessMode: ReadWriteOnce       # Access mode for the volume
+
 jxRequirements:
   autoUpdate:
     enabled: false
