@@ -5,3 +5,11 @@ resources:
   limits:
     memory: "1Gi"
     cpu: "1"
+# set volume for docker-registry pod
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 5Gi
+  existingClaim: ""
+  storageClass: ""
+  hostPath: /home/rokas/volumes/docker-registry
