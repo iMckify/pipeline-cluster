@@ -27,7 +27,7 @@ spec:
         release: docker-registry
       annotations:
         checksum/config: 492034f39a50c85107770255c8e115771feb08b03bd86989b039c405ed359257
-        checksum/secret: 069c0702bbdf849d93abad385daf5df427f0753b5612ec08ea4125c3c4d34909
+        checksum/secret: 8268b964817ac3ea9df2750820d1d033d6b23b895639799bf91780509f997c88
     spec:
       securityContext:
         fsGroup: 1000
@@ -75,4 +75,5 @@ spec:
         configMap:
           name: docker-registry-config
       - name: data
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: docker-registry

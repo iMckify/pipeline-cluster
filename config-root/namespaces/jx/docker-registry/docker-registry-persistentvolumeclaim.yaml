@@ -1,0 +1,20 @@
+# Source: docker-registry/templates/pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: docker-registry
+  namespace: jx
+  labels:
+    app: docker-registry
+    chart: "docker-registry-2.2.3"
+    release: "docker-registry"
+    heritage: "Helm"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'docker-registry'
+spec:
+  accessModes:
+  - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "5Gi"
