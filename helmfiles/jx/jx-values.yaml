@@ -16,6 +16,12 @@ jx:
       email: jenkins-x@googlegroups.com
       token: todo
       username: jenkins-x-labs-bot
+  volumes:
+    dockerRegistry:
+      accessMode: ReadWriteOnce
+      hostPath: /home/rokas/volumes/docker-registry
+      mountPath: /var/lib/registry
+      size: 5Gi
 jxRequirements:
   autoUpdate:
     enabled: false
