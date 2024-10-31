@@ -90,7 +90,7 @@
     ingresses:
     - name: docker-registry
       url: http://docker-registry-jx.192.168.49.2.nip.io/
-    lastDeployed: "2024-10-31T15:22:59Z"
+    lastDeployed: "2024-10-31T15:37:00Z"
     maintainers:
     - email: devin@canterberry.cc
       name: Devin Canterberry
@@ -142,7 +142,7 @@
   path: helmfiles/jx-staging/helmfile.yaml
   releases:
   - apiVersion: v1
-    appVersion: 0.0.23
+    appVersion: 0.0.24
     applicationUrl: http://react-spring-jx-staging.192.168.49.2.nip.io
     description: A Helm chart for Kubernetes
     firstDeployed: "2024-10-11T17:05:07Z"
@@ -150,7 +150,7 @@
     ingresses:
     - name: react-spring
       url: http://react-spring-jx-staging.192.168.49.2.nip.io
-    lastDeployed: "2024-10-31T15:22:59Z"
+    lastDeployed: "2024-10-31T15:37:00Z"
     name: react-spring
     releaseName: react-spring
     repositoryName: dev
@@ -158,4 +158,4 @@
     resourcePath: config-root/namespaces/jx-staging/react-spring
     sources:
     - https://github.com/iMckify/react-spring.git
-    version: 0.0.23
+    version: 0.0.24
