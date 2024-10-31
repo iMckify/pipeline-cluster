@@ -5,7 +5,7 @@ metadata:
   name: react-spring-react-spring
   labels:
     draft: draft-app
-    chart: "react-spring-0.0.23"
+    chart: "react-spring-0.0.24"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'react-spring'
@@ -25,11 +25,11 @@ spec:
       serviceAccountName: react-spring-react-spring
       containers:
       - name: react-spring
-        image: "10.97.57.112/imckify/react-spring:0.0.23"
+        image: "10.97.57.112/imckify/react-spring:0.0.24"
         imagePullPolicy: IfNotPresent
         env:
         - name: VERSION
-          value: 0.0.23
+          value: 0.0.24
         envFrom: null
         ports:
         - name: http
