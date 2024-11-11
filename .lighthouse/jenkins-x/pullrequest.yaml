@@ -1,11 +1,9 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
-metadata:
-  annotations:
-    internal.kpt.dev/upstream-identifier: tekton.dev|PipelineRun|default|pullrequest
-    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/839765fb594490586e51b25e12b93609441235f8/tasks/git-clone/git-clone-pr.yaml
-  creationTimestamp: null
+metadata: # kpt-merge: /pullrequest
   name: pullrequest
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'tekton.dev|PipelineRun|default|pullrequest'
 spec:
   pipelineSpec:
     tasks:
@@ -13,22 +11,21 @@ spec:
       resources: {}
       taskSpec:
         metadata: {}
-        spec: null
         stepTemplate:
           image: uses:jenkins-x/jx3-pipeline-catalog/tasks/environment/pullrequest.yaml@versionStream
           name: ""
           resources:
+            # override limits for all containers here
             limits:
               cpu: 400m
               memory: 512Mi
           workingDir: /workspace/source
         steps:
         - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-env-pr.yaml@versionStream
-          name: ""
           resources: {}
-        - image: alpine:latest
-          name: list-bucketrepo-charts
-          resources: {}
+        - name: list-bucketrepo-charts
+          image: alpine:latest
+          resources: { }
           script: |
             #!/bin/sh
             apk update
@@ -37,8 +34,9 @@ spec:
             curl -s http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/index.yaml
         - name: make-pr
           resources:
+            # override requests for the pod here
             requests:
-              cpu: 100m
+              cpu: 0.1
               memory: 128Mi
   podTemplate: {}
   serviceAccountName: tekton-bot
