@@ -5,8 +5,7 @@ spec:
     enabled: false
     schedule: ""
   cluster:
-    chartKind: pages
-    chartRepository: https://github.com/iMckify/pipeline-config-charts.git
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/
     clusterName: kind
     devEnvApprovers:
     - todo
