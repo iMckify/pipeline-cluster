@@ -1,0 +1,8 @@
+# set volume for bucketrepo pod
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 5Gi
+  existingClaim: ""
+  storageClass: ""
+  hostPath: /home/rokas/volumes/bucketrepo
