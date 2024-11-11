@@ -6,8 +6,6 @@ environments:
 namespace: jx-staging
 repositories:
 - name: dev
-  url: https://iMckify.github.io/pipeline-config-charts/
-- name: dev2
   url: http://bucketrepo-jx.192.168.49.2.nip.io
 releases:
 - chart: dev/react-spring
