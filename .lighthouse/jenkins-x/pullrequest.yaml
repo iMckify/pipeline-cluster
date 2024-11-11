@@ -30,6 +30,8 @@ spec:
             #!/bin/sh
             apk update
             apk add curl
+            echo "Listing helm repos:"
+            helm repo list
             echo "Listing charts from bucketrepo.jx:"
             curl -s http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/index.yaml
         - name: make-pr
