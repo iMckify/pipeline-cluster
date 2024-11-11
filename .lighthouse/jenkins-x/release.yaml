@@ -1,9 +1,11 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
-metadata: # kpt-merge: /release
-  name: release
+metadata:
   annotations:
-    internal.kpt.dev/upstream-identifier: 'tekton.dev|PipelineRun|default|release'
+    internal.kpt.dev/upstream-identifier: tekton.dev|PipelineRun|default|release
+    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/839765fb594490586e51b25e12b93609441235f8/tasks/git-clone/git-clone.yaml
+  creationTimestamp: null
+  name: release
 spec:
   pipelineSpec:
     tasks:
@@ -11,11 +13,11 @@ spec:
       resources: {}
       taskSpec:
         metadata: {}
+        spec: null
         stepTemplate:
           image: uses:jenkins-x/jx3-pipeline-catalog/tasks/environment/release.yaml@versionStream
           name: ""
           resources:
-            # override limits for all containers here
             limits:
               cpu: 400m
               memory: 256Mi
@@ -26,9 +28,8 @@ spec:
           resources: {}
         - name: admin-log
           resources:
-            # override requests for the pod here
             requests:
-              cpu: 0.1
+              cpu: 100m
               memory: 128Mi
   podTemplate: {}
   serviceAccountName: tekton-bot
