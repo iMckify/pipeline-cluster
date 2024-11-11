@@ -23,6 +23,15 @@ spec:
         steps:
         - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-env-pr.yaml@versionStream
           resources: {}
+        - name: list-bucketrepo-charts
+          image: alpine:latest
+          resources: { }
+          script: |
+            #!/bin/sh
+            apk update
+            apk add curl
+            echo "Listing charts from bucketrepo.jx:"
+            curl -s http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/index.yaml
         - name: make-pr
           resources:
             # override requests for the pod here
