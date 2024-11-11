@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: react-spring
   labels:
-    chart: "react-spring-0.0.25"
+    chart: "react-spring-0.0.27"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'react-spring'
