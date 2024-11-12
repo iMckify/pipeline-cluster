@@ -7,15 +7,15 @@ metadata:
     kubernetes.io/ingress.class: nginx
     meta.helm.sh/release-name: 'jxboot-helmfile-resources'
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable SSL redirect if you don't have SSL configured
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    - http:
+    - host: chartmuseum-jx.192.168.49.2.nip.io
+      http:
         paths:
           - pathType: ImplementationSpecific
             backend:
               service:
-                name: bucketrepo
+                name: chartmuseum
                 port:
-                  number: 80
-      host: chartmuseum-jx.192.168.49.2.nip.io
+                  number: 8080
