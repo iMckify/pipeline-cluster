@@ -7,9 +7,11 @@ namespace: jx-production
 repositories:
 - name: dev
   url: http://bucketrepo-jx.192.168.49.2.nip.io/bucketrepo/charts
+- name: dev2
+  url: http://bucketrepo-jx.192.168.49.2.nip.io
 releases:
 - chart: dev/react-spring
-  version: 0.0.29
+  version: 0.0.31
   name: react-spring
   values:
   - jx-values.yaml
