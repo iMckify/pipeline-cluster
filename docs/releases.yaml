@@ -9,7 +9,7 @@
     icon: https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg
     ingresses:
     - name: bucketrepo
-      url: http://bucketrepo-jx.192.168.49.2.nip.io
+      url: http://bucketrepo-jx.192.168.49.2.nip.io/bucketrepo/charts/
     - name: hook
       url: http://sharp-sunny-elephant.ngrok-free.app/hook
     lastDeployed: "2024-10-09T19:19:19Z"
