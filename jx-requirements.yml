@@ -5,7 +5,7 @@ spec:
     enabled: false
     schedule: ""
   cluster:
-    chartRepository: http://chartmuseum.jx.svc.cluster.local
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts/
     clusterName: kind
     devEnvApprovers:
     - todo
@@ -31,7 +31,7 @@ spec:
       production: false
   pipelineUser:
     username: iMckify
-  repository: chartmuseum
+  repository: bucketrepo
   secretStorage: local
   vault: {}
   webhook: lighthouse
