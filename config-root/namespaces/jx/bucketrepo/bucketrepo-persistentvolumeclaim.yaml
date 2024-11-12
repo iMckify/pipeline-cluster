@@ -1,0 +1,19 @@
+# Source: docker-registry/templates/pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: bucketrepo-bucketrepo
+  namespace: jx
+  labels:
+    draft: draft-app
+    chart: "bucketrepo-0.6.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'bucketrepo'
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "5Gi"
+

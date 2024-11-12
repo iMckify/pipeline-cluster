@@ -1,4 +1,3 @@
-# Source: bucketrepo/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -25,46 +24,44 @@ spec:
         checksum/config: "e4eb9e4600079b6269234f92d4eb0772e0537e685f847544b7fc810254517ae0"
     spec:
       containers:
-      - name: bucketrepo
-        image: "ghcr.io/jenkins-x/bucketrepo:0.6.1"
-        imagePullPolicy: IfNotPresent
-        args:
-        - "-config-path=/config"
-        - "-log-level=info"
-        env:
-        ports:
-        - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          initialDelaySeconds: 60
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
-        volumeMounts:
-        - name: config
-          mountPath: /config
-          readOnly: true
-        resources:
-          limits:
-            cpu: 100m
-            memory: 256Mi
-          requests:
-            cpu: 80m
-            memory: 128Mi
+        - name: bucketrepo
+          image: "ghcr.io/jenkins-x/bucketrepo:0.6.1"
+          imagePullPolicy: IfNotPresent
+          args:
+            - "-config-path=/config"
+            - "-log-level=info"
+          env:
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: true
+            - name: bucketrepo-data
+              mountPath: /data
       securityContext:
         fsGroup: 65534
       terminationGracePeriodSeconds: 10
       serviceAccountName: bucketrepo-bucketrepo
       volumes:
-      - name: config
-        secret:
-          secretName: bucketrepo-config
+        - name: config
+          secret:
+            secretName: bucketrepo-config
+        - name: bucketrepo-data
+          persistentVolumeClaim:
+            claimName: bucketrepo-bucketrepo
