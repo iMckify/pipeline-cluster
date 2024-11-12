@@ -7,9 +7,11 @@ metadata:
     draft: draft-app
     chart: "bucketrepo-0.6.1"
     gitops.jenkins-x.io/pipeline: 'namespaces'
+    app.kubernetes.io/managed-by: "Helm"
   annotations:
     meta.helm.sh/release-name: 'bucketrepo'
     wave.pusher.com/update-on-config-change: 'true'
+    meta.helm.sh/release-namespace: "jx"
   namespace: jx
 spec:
   replicas: 1
