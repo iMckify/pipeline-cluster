@@ -64,4 +64,4 @@ spec:
             secretName: bucketrepo-config
         - name: bucketrepo-data
           persistentVolumeClaim:
-            claimName: bucketrepo-bucketrepo
+            claimName: bucketrepo
