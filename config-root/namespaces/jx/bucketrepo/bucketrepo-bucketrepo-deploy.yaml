@@ -52,8 +52,6 @@ spec:
             - name: config
               mountPath: /config
               readOnly: true
-            - name: bucketrepo-data
-              mountPath: /data
       securityContext:
         fsGroup: 65534
       terminationGracePeriodSeconds: 10
@@ -62,6 +60,3 @@ spec:
         - name: config
           secret:
             secretName: bucketrepo-config
-        - name: bucketrepo-data
-          persistentVolumeClaim:
-            claimName: bucketrepo
