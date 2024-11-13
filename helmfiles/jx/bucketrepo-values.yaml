@@ -11,3 +11,9 @@ persistence:
   existingClaim: bucketrepo-bucketrepo
   accessMode: ReadWriteOnce
   storageClassName: standard
+deployment:
+  enabled: false
+dependencies:
+  - name: bucketrepo
+    version: "0.6.1"
+    repository: "jxgh"
