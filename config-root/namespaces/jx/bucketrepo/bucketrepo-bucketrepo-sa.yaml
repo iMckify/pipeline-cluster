@@ -9,8 +9,6 @@ metadata:
     release: bucketrepo
     heritage: Helm
     gitops.jenkins-x.io/pipeline: 'namespaces'
-    app.kubernetes.io/managed-by: "Helm"
   annotations:
     meta.helm.sh/release-name: 'bucketrepo'
-    meta.helm.sh/release-namespace: "jx"
   namespace: jx
