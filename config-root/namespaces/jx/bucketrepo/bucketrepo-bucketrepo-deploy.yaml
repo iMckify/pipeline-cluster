@@ -55,6 +55,8 @@ spec:
         - name: config
           mountPath: /config
           readOnly: true
+        - name: data
+          mountPath: /config
         resources:
           limits:
             cpu: "1"
@@ -70,3 +72,6 @@ spec:
       - name: config
         secret:
           secretName: bucketrepo-config
+      - name: data
+        persistentVolumeClaim:
+          claimName: bucketrepo-bucketrepo
