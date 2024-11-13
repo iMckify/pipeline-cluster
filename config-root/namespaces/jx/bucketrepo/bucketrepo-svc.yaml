@@ -6,10 +6,12 @@ metadata:
   labels:
     chart: "bucketrepo-0.6.1"
     gitops.jenkins-x.io/pipeline: 'namespaces'
+    app.kubernetes.io/managed-by: "Helm"
   annotations:
     fabric8.io/expose: "true"
     fabric8.io/ingress.annotations: 'kubernetes.io/ingress.class: nginx'
     meta.helm.sh/release-name: 'bucketrepo'
+    meta.helm.sh/release-namespace: "jx"
   namespace: jx
 spec:
   type: ClusterIP
