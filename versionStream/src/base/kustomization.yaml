@@ -82,7 +82,6 @@ resources:
   - namespaces/jx/pusher-wave/clusterrolebinding.yaml
   - namespaces/jx/pusher-wave/deployment.yaml
   - namespaces/jx/pusher-wave/serviceaccount.yaml
-  - namespaces/jx/tekton/101-podsecuritypolicy.yaml
   - namespaces/jx/tekton/200-clusterrole.yaml
   - namespaces/jx/tekton/200-clusterrolebinding.yaml
   - namespaces/jx/tekton/250-serviceaccount.yaml
