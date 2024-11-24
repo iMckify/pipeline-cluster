@@ -13,3 +13,32 @@ persistence:
   existingClaim: ""
   storageClass: ""
   hostPath: /home/rokas/volumes/docker-registry
+ingress:
+  enabled: true
+  name: docker-registry
+  namespace: jx
+  labels:
+    app: docker-registry
+    chart: docker-registry-2.2.3
+    release: docker-registry
+    heritage: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'docker-registry'
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"  # Ensure HTTP -> HTTPS redirect
+  ingressClassName: nginx
+  rules:
+    - host: docker-registry-jx.192.168.49.2.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: docker-registry
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - docker-registry-jx.192.168.49.2.nip.io
+      secretName: docker-registry-tls
