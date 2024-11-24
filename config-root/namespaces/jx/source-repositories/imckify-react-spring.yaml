@@ -6,7 +6,9 @@ metadata:
     owner: iMckify
     provider: github
     repository: react-spring
+    gitops.jenkins-x.io/pipeline: 'namespaces'
   name: imckify-react-spring
+  namespace: jx
 spec:
   httpCloneURL: https://github.com/iMckify/react-spring.git
   org: iMckify
