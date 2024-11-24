@@ -54,7 +54,7 @@
 	      <td>docker-registry</td>
 	      <td title='A Helm chart for Docker Registry'><a href='https://hub.docker.com/_/registry/'> <img src='https://helm.twun.io/docker-registry.png' width='24px' height='24px'> docker-registry</a></td>
 	      <td>2.2.3</td>
-	      <td><a href='http://docker-registry-jx.192.168.49.2.nip.io/'>view</a></td>
+	      <td><a href='https://docker-registry-jx.192.168.49.2.nip.io'>view</a></td>
 	      <td><a href='https://github.com/docker/distribution-library-image'>source</a></td>
 	    </tr>
     <tr>
@@ -80,7 +80,7 @@
 	    <tr>
 	      <td>react-spring</td>
 	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> react-spring</td>
-	      <td>0.0.46</td>
+	      <td>0.0.47</td>
 	      <td><a href='http://react-spring-jx-staging.192.168.49.2.nip.io'>view</a></td>
 	      <td><a href='https://github.com/iMckify/react-spring.git'>source</a></td>
 	    </tr>

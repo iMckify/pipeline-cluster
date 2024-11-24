@@ -9,11 +9,7 @@ metadata:
     chart: docker-registry-2.2.3
     release: docker-registry
     heritage: Helm
-    app: docker-registry
-    chart: docker-registry-2.2.3
     gitops.jenkins-x.io/pipeline: 'namespaces'
-    heritage: Helm
-    release: docker-registry
   annotations:
     meta.helm.sh/release-name: "docker-registry"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
