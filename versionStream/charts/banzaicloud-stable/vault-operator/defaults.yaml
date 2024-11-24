@@ -1,1 +1,3 @@
-replacementChartPrefix: bank-vaults
+namespace: secret-infra
+url: https://banzaicloud.com/docs/bank-vaults/operator/
+version: 1.10.0

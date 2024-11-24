@@ -53,6 +53,3 @@ repositories:
 - prefix: autoscaler
   urls:
   - https://kubernetes.github.io/autoscaler
-- prefix: bank-vaults
-  urls:
-  - oci://ghcr.io/bank-vaults/helm-charts
