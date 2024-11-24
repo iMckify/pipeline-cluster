@@ -9,9 +9,14 @@ metadata:
     chart: docker-registry-2.2.3
     release: docker-registry
     heritage: Helm
+    app: docker-registry
+    chart: docker-registry-2.2.3
     gitops.jenkins-x.io/pipeline: 'namespaces'
+    heritage: Helm
+    release: docker-registry
   annotations:
-    meta.helm.sh/release-name: 'docker-registry'
+    meta.helm.sh/release-name: "docker-registry"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
@@ -25,3 +30,7 @@ spec:
             name: docker-registry
             port:
               number: 80
+  tls:
+  - hosts:
+    - docker-registry-jx.192.168.49.2.nip.io
+    secretName: docker-registry-tls
