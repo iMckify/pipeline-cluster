@@ -21,7 +21,7 @@ ingress:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'docker-registry'
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"  # Ensure HTTP -> HTTPS redirect
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
   ingressClassName: nginx
   rules:
     - host: docker-registry-jx.192.168.49.2.nip.io
