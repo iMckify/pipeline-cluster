@@ -18,10 +18,6 @@ ingress:
   name: docker-registry
   namespace: jx
   labels:
-    app: docker-registry
-    chart: docker-registry-2.2.3
-    release: docker-registry
-    heritage: Helm
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'docker-registry'
