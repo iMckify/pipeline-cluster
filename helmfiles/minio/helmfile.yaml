@@ -5,7 +5,7 @@ repositories:
   url: https://charts.min.io/
 releases:
 - chart: minio/minio
-  version: 5.3.0
+  version: 4.1.5
   name: minio
 templates: {}
 renderedvalues: {}
