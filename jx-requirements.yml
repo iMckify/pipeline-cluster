@@ -35,9 +35,7 @@ spec:
   repository: bucketrepo
   secretStorage: local
   storage:
-  - name: minio
-    url: ""
-  - name: ""
+  - name: "minio"
     url: http://minio.jx.svc.cluster.local:9000
   vault: {}
   webhook: lighthouse
