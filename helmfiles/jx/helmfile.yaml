@@ -9,7 +9,19 @@ repositories:
   url: https://jenkins-x-charts.github.io/repo
 - name: twuni
   url: https://helm.twun.io
+- name: minio
+  url: https://charts.min.io
 releases:
+- chart: minio/minio
+  version: 5.0.6
+  name: minio
+  values:
+    - accessKey: admin
+    - secretKey: admin
+    - persistence:
+        enabled: true
+        size: 5Gi
+        storageClass: standard
 - chart: jxgh/jxboot-helmfile-resources
   version: 1.1.384
   name: jxboot-helmfile-resources
