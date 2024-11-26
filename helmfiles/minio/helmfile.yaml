@@ -1,0 +1,18 @@
+filepath: ""
+namespace: minio
+repositories:
+- name: minio
+  url: https://charts.min.io/
+releases:
+- chart: minio/minio
+  version: 5.3.0
+  name: minio
+  values:
+    - rootUser: rootUser
+    - rootPassword: rootpass123
+    - persistence:
+        enabled: true
+        size: 5Gi
+        storageClass: standard
+templates: {}
+renderedvalues: {}
