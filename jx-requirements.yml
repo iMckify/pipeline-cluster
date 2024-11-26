@@ -36,3 +36,7 @@ spec:
   secretStorage: local
   vault: {}
   webhook: lighthouse
+  # Storage Configuration for Artifacts
+  storage:
+  - name: minio
+  - url: http://minio.jx.svc.cluster.local:9000
