@@ -87,7 +87,7 @@
 	    <tr>
 	      <td>react-spring</td>
 	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> react-spring</td>
-	      <td>0.0.52</td>
+	      <td>0.0.53</td>
 	      <td><a href='http://react-spring-jx-staging.192.168.49.2.nip.io'>view</a></td>
 	      <td><a href='https://github.com/iMckify/react-spring.git'>source</a></td>
 	    </tr>
@@ -97,7 +97,7 @@
 	    <tr>
 	      <td>react-spring</td>
 	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> react-spring</td>
-	      <td>0.0.50</td>
+	      <td>0.0.25</td>
 	      <td><a href='http://react-spring-jx-production.192.168.49.2.nip.io'>view</a></td>
 	      <td><a href='https://github.com/iMckify/react-spring.git'>source</a></td>
 	    </tr>
