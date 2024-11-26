@@ -50,6 +50,11 @@ jxRequirements:
     username: iMckify
   repository: bucketrepo
   secretStorage: local
+  storage:
+  - name: minio
+    url: ""
+  - name: ""
+    url: http://minio.jx.svc.cluster.local:9000
   vault: {}
   webhook: lighthouse
 jxRequirementsIngressExternalDNS:

@@ -34,9 +34,10 @@ spec:
     username: iMckify
   repository: bucketrepo
   secretStorage: local
-  vault: {}
-  webhook: lighthouse
-  # Storage Configuration for Artifacts
   storage:
   - name: minio
-  - url: http://minio.jx.svc.cluster.local:9000
+    url: ""
+  - name: ""
+    url: http://minio.jx.svc.cluster.local:9000
+  vault: {}
+  webhook: lighthouse
