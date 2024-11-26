@@ -1,6 +1,6 @@
-# Source: minio/templates/statefulset.yaml
+# Source: minio/templates/deployment.yaml
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: minio
   labels:
@@ -11,12 +11,14 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'minio'
+    wave.pusher.com/update-on-config-change: 'true'
   namespace: jx
 spec:
-  updateStrategy:
+  strategy:
     type: RollingUpdate
-  podManagementPolicy: "Parallel"
-  serviceName: minio-svc
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 0
   replicas: 1
   selector:
     matchLabels:
@@ -40,10 +42,16 @@ spec:
       serviceAccountName: minio-sa
       containers:
       - name: minio
-        image: quay.io/minio/minio:RELEASE.2024-04-18T19-09-19Z
+        image: "quay.io/minio/minio:RELEASE.2024-04-18T19-09-19Z"
         imagePullPolicy: IfNotPresent
-        command: ["/bin/sh", "-ce", "/usr/bin/docker-entrypoint.sh minio server http://minio-{0...0}.minio-svc.jx.svc/export -S /etc/minio/certs/ --address :9000 --console-address :9001"]
+        command:
+        - "/bin/sh"
+        - "-ce"
+        - "/usr/bin/docker-entrypoint.sh minio server /export -S /etc/minio/certs/ --address :9000 --console-address :9001"
         volumeMounts:
+        - name: minio-user
+          mountPath: "/tmp/credentials"
+          readOnly: true
         - name: export
           mountPath: /export
         ports:
@@ -70,17 +78,9 @@ spec:
         securityContext:
           readOnlyRootFilesystem: false
       volumes:
+      - name: export
+        persistentVolumeClaim:
+          claimName: minio
       - name: minio-user
         secret:
           secretName: minio
-  volumeClaimTemplates:
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: export
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      storageClassName: standard
-      resources:
-        requests:
-          storage: 5Gi

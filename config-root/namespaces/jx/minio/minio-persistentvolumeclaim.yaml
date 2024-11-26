@@ -1,0 +1,21 @@
+# Source: minio/templates/pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio
+  labels:
+    app: minio
+    chart: minio-5.3.0
+    release: minio
+    heritage: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'minio'
+  namespace: jx
+spec:
+  accessModes:
+  - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "5Gi"
+  storageClassName: "standard"
