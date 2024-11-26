@@ -75,5 +75,7 @@ releases:
 - chart: minio/minio
   version: 5.3.0
   name: minio
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}

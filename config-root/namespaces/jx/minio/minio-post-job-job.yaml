@@ -1,0 +1,57 @@
+# Source: minio/templates/post-job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: minio-post-job
+  labels:
+    app: minio-post-job
+    chart: minio-5.3.0
+    release: minio
+    heritage: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+    meta.helm.sh/release-name: 'minio'
+  namespace: jx
+spec:
+  template:
+    metadata:
+      labels:
+        app: minio-job
+        release: minio
+    spec:
+      restartPolicy: OnFailure
+      volumes:
+      - name: etc-path
+        emptyDir: {}
+      - name: tmp
+        emptyDir: {}
+      - name: minio-configuration
+        projected:
+          sources:
+          - configMap:
+              name: minio
+          - secret:
+              name: minio
+      serviceAccountName: minio-sa
+      containers:
+      - name: minio-make-user
+        image: "quay.io/minio/mc:RELEASE.2024-04-18T16-45-29Z"
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh", "/config/add-user"]
+        env:
+        - name: MINIO_ENDPOINT
+          value: minio
+        - name: MINIO_PORT
+          value: "9000"
+        volumeMounts:
+        - name: etc-path
+          mountPath: /etc/minio/mc
+        - name: tmp
+          mountPath: /tmp
+        - name: minio-configuration
+          mountPath: /config
+        resources:
+          requests:
+            memory: 128Mi

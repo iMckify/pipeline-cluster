@@ -1,0 +1,25 @@
+# Source: minio/templates/statefulset.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-svc
+  labels:
+    app: minio
+    chart: minio-5.3.0
+    release: minio
+    heritage: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'minio'
+  namespace: jx
+spec:
+  publishNotReadyAddresses: true
+  clusterIP: None
+  ports:
+  - name: http
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: minio
+    release: minio

@@ -110,7 +110,7 @@
     ingresses:
     - name: docker-registry
       url: https://docker-registry-jx.192.168.49.2.nip.io
-    lastDeployed: "2024-11-26T20:45:13Z"
+    lastDeployed: "2024-11-26T21:16:14Z"
     maintainers:
     - email: devin@canterberry.cc
       name: Devin Canterberry
@@ -142,6 +142,30 @@
     - https://github.com/jenkins-x-plugins/jx-build-controller
     - https://github.com/jenkins-x-plugins/jx-build-controller.git
     version: 0.5.9
+  - apiVersion: v1
+    appVersion: RELEASE.2024-04-18T19-09-19Z
+    description: High Performance Object Storage
+    firstDeployed: "2024-11-26T21:16:14Z"
+    home: https://min.io
+    icon: https://min.io/resources/img/logo/MINIO_wordmark.png
+    keywords:
+    - minio
+    - storage
+    - object-storage
+    - s3
+    - cluster
+    lastDeployed: "2024-11-26T21:16:14Z"
+    maintainers:
+    - email: dev@minio.io
+      name: MinIO, Inc
+    name: minio
+    releaseName: minio
+    repositoryName: minio
+    repositoryUrl: https://charts.min.io/
+    resourcePath: config-root/namespaces/jx/minio
+    sources:
+    - https://github.com/minio/minio
+    version: 5.3.0
 - namespace: tekton-pipelines
   path: helmfiles/tekton-pipelines/helmfile.yaml
   releases:

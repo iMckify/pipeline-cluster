@@ -72,6 +72,13 @@
 	      <td><a href='https://github.com/jenkins-x-plugins/jx-build-controller'>0</a> <a href='https://github.com/jenkins-x-plugins/jx-build-controller.git'>1</a> </td>
 	    </tr>
     <tr>
+	      <td>minio</td>
+	      <td title='High Performance Object Storage'><a href='https://min.io'> <img src='https://min.io/resources/img/logo/MINIO_wordmark.png' width='24px' height='24px'> minio</a></td>
+	      <td>5.3.0</td>
+	      <td></td>
+	      <td><a href='https://github.com/minio/minio'>source</a></td>
+	    </tr>
+    <tr>
 		      <td colspan='5'><h3>tekton-pipelines</h3></td>
 		    </tr>
 	    <tr>
