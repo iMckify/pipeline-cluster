@@ -76,13 +76,13 @@ releases:
   version: 5.3.0
   name: minio
   values:
-    - jx-values.yaml
-    - replicas: 1
-    - rootUser: rootUser
-    - rootPassword: rootpass123
-    - persistence:
-        enabled: true
-        size: 5Gi
-        storageClass: standard
+  - jx-values.yaml
+  - replicas: 1
+  - rootUser: rootUser
+  - rootPassword: rootpass123
+  - persistence:
+      enabled: true
+      size: 5Gi
+      storageClass: standard
 templates: {}
 renderedvalues: {}

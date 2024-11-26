@@ -17,7 +17,7 @@ spec:
     type: RollingUpdate
   podManagementPolicy: "Parallel"
   serviceName: minio-svc
-  replicas: 16
+  replicas: 1
   selector:
     matchLabels:
       app: minio
@@ -29,7 +29,7 @@ spec:
         app: minio
         release: minio
       annotations:
-        checksum/secrets: 507fffb8d7f7f132b64f4856937c57fee42dc7451eb237022cf466b9f7ba2fca
+        checksum/secrets: d944e061e3547a55c0984759a8963f7d4b9b526a1b19e187f08c734b0eb6e5f3
         checksum/config: 3e4529cf5b33355ccb9a5e8167ba93d70e4493762f97b73027ef4c1f4c6ee3d5
     spec:
       securityContext:
@@ -42,7 +42,7 @@ spec:
       - name: minio
         image: quay.io/minio/minio:RELEASE.2024-04-18T19-09-19Z
         imagePullPolicy: IfNotPresent
-        command: ["/bin/sh", "-ce", "/usr/bin/docker-entrypoint.sh minio server http://minio-{0...15}.minio-svc.jx.svc/export -S /etc/minio/certs/ --address :9000 --console-address :9001"]
+        command: ["/bin/sh", "-ce", "/usr/bin/docker-entrypoint.sh minio server http://minio-{0...0}.minio-svc.jx.svc/export -S /etc/minio/certs/ --address :9000 --console-address :9001"]
         volumeMounts:
         - name: export
           mountPath: /export
@@ -80,6 +80,7 @@ spec:
       name: export
     spec:
       accessModes: ["ReadWriteOnce"]
+      storageClassName: standard
       resources:
         requests:
-          storage: 500Gi
+          storage: 5Gi
