@@ -33,7 +33,5 @@ spec:
     pipelineUserEmail: "jenkins-x@googlegroups.com"
     prowConfig: Scheduler
     storageLocations:
-    - bucketUrl: ""
-      classifier: "minio"
     - bucketUrl: "http://minio.jx.svc.cluster.local:9000"
-      classifier: ""
+      classifier: "minio"
