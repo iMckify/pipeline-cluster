@@ -77,6 +77,7 @@ releases:
   name: minio
   values:
   - jx-values.yaml
+  - ./minio-console-values.yaml
   - mode: standalone
   - replicas: 1
   - rootUser: rootUser
