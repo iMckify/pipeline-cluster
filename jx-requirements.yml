@@ -5,8 +5,8 @@ spec:
     enabled: false
     schedule: ""
   cluster:
-    chartKind: oci
-    chartRepository: docker-registry-jx.192.168.49.2.nip.io
+    chartKind: pages
+    chartRepository: https://github.com/iMckify/pipeline-config-charts.git
     clusterName: kind
     devEnvApprovers:
     - todo
