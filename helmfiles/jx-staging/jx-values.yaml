@@ -21,8 +21,8 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
-    chartKind: pages
-    chartRepository: https://github.com/iMckify/pipeline-config-charts.git
+    chartKind: oci
+    chartRepository: oci://docker-registry-jx.192.168.49.2.nip.io/charts
     clusterName: kind
     devEnvApprovers:
     - todo
