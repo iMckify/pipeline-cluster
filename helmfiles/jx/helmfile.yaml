@@ -48,13 +48,6 @@ releases:
   values:
   - ../../versionStream/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl
   - jx-values.yaml
-- chart: jxgh/bucketrepo
-  version: 0.6.1
-  name: bucketrepo
-  values:
-  - ../../versionStream/charts/jxgh/bucketrepo/values.yaml.gotmpl
-  - jx-values.yaml
-  - ./bucketrepo-values.yaml
 - chart: twuni/docker-registry
   name: docker-registry
   values:
