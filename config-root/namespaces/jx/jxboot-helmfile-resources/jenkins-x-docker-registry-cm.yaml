@@ -12,3 +12,5 @@ metadata:
 data:
   kaniko.flags: "--insecure"
   docker.registry: 10.97.57.112
+  JX_REPOSITORY_PASSWORD: "admin"
+  JX_REPOSITORY_USERNAME: "admin"
