@@ -6,7 +6,7 @@ spec:
     schedule: ""
   cluster:
     chartKind: oci
-    chartRepository: oci://docker-registry-jx.192.168.49.2.nip.io
+    chartRepository: docker-registry-jx.192.168.49.2.nip.io
     clusterName: kind
     devEnvApprovers:
     - todo
