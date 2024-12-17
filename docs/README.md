@@ -61,7 +61,7 @@
 	      <td>docker-registry</td>
 	      <td title='A Helm chart for Docker Registry'><a href='https://hub.docker.com/_/registry/'> <img src='https://helm.twun.io/docker-registry.png' width='24px' height='24px'> docker-registry</a></td>
 	      <td>2.2.3</td>
-	      <td><a href='https://docker-registry-jx.192.168.49.2.nip.io'>view</a></td>
+	      <td><a href='http://docker-registry-jx.192.168.49.2.nip.io/'>view</a></td>
 	      <td><a href='https://github.com/docker/distribution-library-image'>source</a></td>
 	    </tr>
     <tr>
