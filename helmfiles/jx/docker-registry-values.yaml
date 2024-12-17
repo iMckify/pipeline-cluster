@@ -34,7 +34,3 @@ ingress:
                 name: docker-registry
                 port:
                   number: 80
-  tls:
-    - hosts:
-        - docker-registry-jx.192.168.49.2.nip.io
-      secretName: docker-registry-tls
