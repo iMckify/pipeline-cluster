@@ -51,13 +51,6 @@
 	      <td><a href='https://github.com/jenkins-x-plugins/lighthouse-webui-plugin'>0</a> <a href='https://github.com/jenkins-x-plugins/lighthouse-webui-plugin.git'>1</a> </td>
 	    </tr>
     <tr>
-	      <td>bucketrepo</td>
-	      <td title='A Helm chart for bucketrepo service'> <img src='https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/d273e09/images/go.png' width='24px' height='24px'> bucketrepo</td>
-	      <td>0.6.1</td>
-	      <td></td>
-	      <td><a href='https://github.com/jenkins-x/bucketrepo.git'>source</a></td>
-	    </tr>
-    <tr>
 	      <td>docker-registry</td>
 	      <td title='A Helm chart for Docker Registry'><a href='https://hub.docker.com/_/registry/'> <img src='https://helm.twun.io/docker-registry.png' width='24px' height='24px'> docker-registry</a></td>
 	      <td>2.2.3</td>
