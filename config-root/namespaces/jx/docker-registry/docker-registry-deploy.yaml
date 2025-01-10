@@ -12,6 +12,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'docker-registry'
+    meta.helm.sh/release-namespace: 'jx'
     wave.pusher.com/update-on-config-change: 'true'
 spec:
   selector:
@@ -27,7 +28,7 @@ spec:
         release: docker-registry
       annotations:
         checksum/config: 492034f39a50c85107770255c8e115771feb08b03bd86989b039c405ed359257
-        checksum/secret: e73c3dd7367014fae6e22ca3c6a2fdcf742d9b27a733156c52ff614a07936174
+        checksum/secret: 5173b4422e2c3e80742e0567293e7ce3d6a4f137b9136c1cab906dccb4399d94
     spec:
       securityContext:
         fsGroup: 1000

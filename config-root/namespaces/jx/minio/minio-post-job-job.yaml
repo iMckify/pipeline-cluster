@@ -13,6 +13,7 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
     meta.helm.sh/release-name: 'minio'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
 spec:
   template:

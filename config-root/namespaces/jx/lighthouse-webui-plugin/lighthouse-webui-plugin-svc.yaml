@@ -12,6 +12,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'lighthouse-webui-plugin'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
 spec:
   ports:

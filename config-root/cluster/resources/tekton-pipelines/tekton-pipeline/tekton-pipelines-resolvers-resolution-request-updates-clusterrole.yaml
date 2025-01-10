@@ -25,6 +25,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'cluster'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 rules:
 - apiGroups: ["resolution.tekton.dev"]
   resources: ["resolutionrequests", "resolutionrequests/status"]

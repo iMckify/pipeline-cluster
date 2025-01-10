@@ -25,3 +25,4 @@ metadata:
     team: 'jx'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'

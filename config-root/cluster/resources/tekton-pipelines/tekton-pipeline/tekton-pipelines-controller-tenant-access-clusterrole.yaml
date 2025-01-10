@@ -11,6 +11,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'cluster'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 rules:
 # Read-write access to create Pods and PVCs (for Workspaces)
 - apiGroups: [""]

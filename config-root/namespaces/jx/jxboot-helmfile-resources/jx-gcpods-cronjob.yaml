@@ -5,6 +5,7 @@ metadata:
   name: jx-gcpods
   annotations:
     meta.helm.sh/release-name: 'jxboot-helmfile-resources'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'
@@ -33,7 +34,7 @@ spec:
             - gc
             - pods
             imagePullPolicy: IfNotPresent
-            image: "ghcr.io/jenkins-x/jx-boot:3.10.156"
+            image: "ghcr.io/jenkins-x/jx-boot:3.11.2"
             env:
             - name: JX_LOG_FORMAT
               value: json

@@ -9,6 +9,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
   namespace: tekton-pipelines
 rules:
 # All system:authenticated users needs to have access

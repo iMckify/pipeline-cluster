@@ -8,6 +8,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'react-spring'
+    meta.helm.sh/release-namespace: 'jx-production'
   namespace: jx-production
 spec:
   type: ClusterIP

@@ -10,6 +10,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'cluster'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 rules:
 # The webhook needs to be able to get and update customresourcedefinitions,
 # mainly to update the webhook certificates.

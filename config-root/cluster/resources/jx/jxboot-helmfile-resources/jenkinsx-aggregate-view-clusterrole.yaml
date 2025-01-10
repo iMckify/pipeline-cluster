@@ -10,6 +10,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'cluster'
   annotations:
     meta.helm.sh/release-name: 'jxboot-helmfile-resources'
+    meta.helm.sh/release-namespace: 'jx'
 rules:
 - apiGroups:
   - jenkins.io

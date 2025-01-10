@@ -12,6 +12,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'docker-registry'
+    meta.helm.sh/release-namespace: 'jx'
 data:
   config.yml: |-
     health:

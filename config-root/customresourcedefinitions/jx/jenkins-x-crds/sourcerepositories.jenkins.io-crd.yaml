@@ -5,6 +5,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
     meta.helm.sh/release-name: 'jenkins-x-crds'
+    meta.helm.sh/release-namespace: 'jx'
   creationTimestamp: null
   name: sourcerepositories.jenkins.io
   labels:

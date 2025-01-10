@@ -5,6 +5,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     meta.helm.sh/release-name: 'jxboot-helmfile-resources'
+    meta.helm.sh/release-namespace: 'jx'
   name: hook
   namespace: jx
   labels:

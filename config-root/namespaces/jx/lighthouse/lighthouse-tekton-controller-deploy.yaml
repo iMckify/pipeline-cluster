@@ -4,11 +4,12 @@ kind: Deployment
 metadata:
   name: lighthouse-tekton-controller
   labels:
-    chart: "lighthouse-1.20.0"
+    chart: "lighthouse-1.22.5"
     app: lighthouse-tekton-controller
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'lighthouse'
+    meta.helm.sh/release-namespace: 'jx'
     wave.pusher.com/update-on-config-change: 'true'
   namespace: jx
 spec:
@@ -25,7 +26,7 @@ spec:
       serviceAccountName: lighthouse-tekton-controller
       containers:
       - name: lighthouse-tekton-controller
-        image: ghcr.io/jenkins-x/lighthouse-tekton-controller:1.20.0
+        image: ghcr.io/jenkins-x/lighthouse-tekton-controller:1.22.5
         imagePullPolicy: IfNotPresent
         args:
         - --namespace=jx
@@ -43,7 +44,7 @@ spec:
         - name: LOG_LEVEL
           value: "info"
         - name: LOGRUS_SERVICE_VERSION
-          value: "1.20.0"
+          value: "1.22.5"
         - name: LOGRUS_STACK_SKIP
           value: ""
         - name: DEFAULT_PIPELINE_RUN_SERVICE_ACCOUNT
@@ -57,11 +58,12 @@ spec:
         - name: LIGHTHOUSE_DASHBOARD_TEMPLATE
           value: "namespaces/{{ .Namespace }}/pipelineruns/{{ .PipelineRun }}"
         - name: LIGHTHOUSE_VERSIONSTREAM_JENKINS_X_JX3_PIPELINE_CATALOG
-          value: "e425101ba431ab54b496b8d6b9446cdc32bebeb5"
+          value: "ac17d3562f6bdecb91178f5f030f5f759edcd9ea"
         envFrom:
         - secretRef:
             name: jx-boot-job-env-vars
             optional: true
+        securityContext: {}
         resources:
           limits:
             cpu: 100m
@@ -73,3 +75,4 @@ spec:
       nodeSelector: {}
       affinity: {}
       tolerations: []
+      securityContext: {}

@@ -13,4 +13,5 @@ metadata:
   annotations:
     installed-by: jenkins-x
     meta.helm.sh/release-name: 'jx-pipelines-visualizer'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx

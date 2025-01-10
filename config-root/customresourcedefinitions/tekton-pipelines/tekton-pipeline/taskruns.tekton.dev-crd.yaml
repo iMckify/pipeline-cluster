@@ -25,6 +25,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'customresourcedefinitions'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 spec:
   group: tekton.dev
   preserveUnknownFields: false

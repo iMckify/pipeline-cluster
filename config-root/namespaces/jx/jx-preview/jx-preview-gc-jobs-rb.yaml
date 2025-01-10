@@ -5,6 +5,7 @@ metadata:
   name: jx-preview-gc-jobs
   annotations:
     meta.helm.sh/release-name: 'jx-preview'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'

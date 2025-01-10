@@ -16,6 +16,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-secret: jx-basic-auth-htpasswd
     nginx.ingress.kubernetes.io/auth-type: basic
     meta.helm.sh/release-name: 'lighthouse-webui-plugin'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
 spec:
   rules:

@@ -5,6 +5,7 @@ metadata:
   name: "minio-sa"
   annotations:
     meta.helm.sh/release-name: 'minio'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'

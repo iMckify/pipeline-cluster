@@ -9,6 +9,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'react-spring'
+    meta.helm.sh/release-namespace: 'jx-production'
     wave.pusher.com/update-on-config-change: 'true'
   namespace: jx-production
 spec:

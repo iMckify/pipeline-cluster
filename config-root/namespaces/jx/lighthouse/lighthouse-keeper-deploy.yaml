@@ -4,11 +4,12 @@ kind: Deployment
 metadata:
   name: lighthouse-keeper
   labels:
-    chart: "lighthouse-1.20.0"
+    chart: "lighthouse-1.22.5"
     app: lighthouse-keeper
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'lighthouse'
+    meta.helm.sh/release-namespace: 'jx'
     wave.pusher.com/update-on-config-change: 'true'
   namespace: jx
 spec:
@@ -35,7 +36,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: lighthouse-keeper
-        image: ghcr.io/jenkins-x/lighthouse-keeper:1.20.0
+        image: ghcr.io/jenkins-x/lighthouse-keeper:1.22.5
         imagePullPolicy: IfNotPresent
         args:
         - "--namespace=jx"
@@ -79,7 +80,7 @@ spec:
         - name: LOGRUS_SERVICE
           value: "lighthouse"
         - name: LOGRUS_SERVICE_VERSION
-          value: "1.20.0"
+          value: "1.22.5"
         - name: LOGRUS_STACK_SKIP
           value: ""
         - name: "LIGHTHOUSE_KEEPER_STATUS_CONTEXT_LABEL"
@@ -90,6 +91,7 @@ spec:
         - secretRef:
             name: jx-boot-job-env-vars
             optional: true
+        securityContext: {}
         resources:
           limits:
             cpu: 400m

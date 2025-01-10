@@ -11,6 +11,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'jx-build-controller'
+    meta.helm.sh/release-namespace: 'jx'
     wave.pusher.com/update-on-config-change: 'true'
   namespace: jx
 spec:

@@ -4,10 +4,11 @@ kind: Service
 metadata:
   name: hook
   labels:
-    chart: "lighthouse-1.20.0"
+    chart: "lighthouse-1.22.5"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'lighthouse'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
 spec:
   type: ClusterIP

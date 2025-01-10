@@ -5,6 +5,7 @@ metadata:
   name: lighthousejobs.lighthouse.jenkins.io
   annotations:
     meta.helm.sh/release-name: 'lighthouse'
+    meta.helm.sh/release-namespace: 'jx'
   labels:
     gitops.jenkins-x.io/pipeline: 'customresourcedefinitions'
 spec:

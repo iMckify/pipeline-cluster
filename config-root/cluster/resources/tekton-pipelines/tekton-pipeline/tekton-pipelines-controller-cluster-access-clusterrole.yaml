@@ -24,6 +24,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'cluster'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 rules:
 - apiGroups: [""]
   # Controller needs to watch Pods created by TaskRuns to see them progress.

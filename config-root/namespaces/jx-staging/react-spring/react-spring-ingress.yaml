@@ -5,6 +5,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     meta.helm.sh/release-name: 'react-spring'
+    meta.helm.sh/release-namespace: 'jx-staging'
   name: react-spring
   namespace: jx-staging
   labels:

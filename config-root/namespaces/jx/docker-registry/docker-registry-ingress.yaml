@@ -13,6 +13,7 @@ metadata:
   annotations:
     meta.helm.sh/release-name: "docker-registry"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    meta.helm.sh/release-namespace: 'jx'
 spec:
   ingressClassName: nginx
   rules:

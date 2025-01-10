@@ -8,6 +8,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'lighthouse'
+    meta.helm.sh/release-namespace: 'jx'
   namespace: jx
 spec:
   concurrencyPolicy: Forbid
@@ -24,7 +25,7 @@ spec:
           containers:
           - command:
             - /home/jx/gc-jobs
-            image: ghcr.io/jenkins-x/lighthouse-gc-jobs:1.20.0
+            image: ghcr.io/jenkins-x/lighthouse-gc-jobs:1.22.5
             imagePullPolicy: IfNotPresent
             args:
             - "--namespace=jx"

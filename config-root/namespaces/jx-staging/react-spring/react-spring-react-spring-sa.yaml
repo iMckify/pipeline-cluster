@@ -5,6 +5,7 @@ metadata:
   name: react-spring-react-spring
   annotations:
     meta.helm.sh/release-name: 'react-spring'
+    meta.helm.sh/release-namespace: 'jx-staging'
   namespace: jx-staging
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'

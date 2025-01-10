@@ -22,6 +22,7 @@ metadata:
     gitops.jenkins-x.io/pipeline: 'customresourcedefinitions'
   annotations:
     meta.helm.sh/release-name: 'tekton-pipeline'
+    meta.helm.sh/release-namespace: 'tekton-pipelines'
 spec:
   group: resolution.tekton.dev
   scope: Namespaced
